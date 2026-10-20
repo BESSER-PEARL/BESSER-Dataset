@@ -1,6 +1,8 @@
 
 # B-UML Dataset
 
+> ⭐ **Part of [BESSER](https://github.com/BESSER-PEARL/BESSER)**, the open-source low-code platform that turns models into working apps. If this project is useful to you, please [star the main repo](https://github.com/BESSER-PEARL/BESSER) too.
+
 
 The **B-UML Dataset** is a large-scale dataset containing **5,000+ B-UML models**, designed to support research in **modeling languages**, **model-driven engineering (MDE)**, and **AI-assisted modeling**.
 
